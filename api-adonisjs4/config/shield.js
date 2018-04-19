@@ -27,7 +27,8 @@ module.exports = {
     | }
     |
     */
-    directives: {},
+    directives: {
+    },
     /*
     |--------------------------------------------------------------------------
     | Report only
@@ -133,7 +134,12 @@ module.exports = {
   csrf: {
     enable: true,
     methods: ['POST', 'PUT', 'DELETE'],
-    filterUris: ['/api/v1/login', '/api/v1/register', '/api/v1/booking', '/api/v1/profile'],
+    filterUris: [
+      '/api/v1/login',
+      '/api/v1/register',
+      '/api/v1/booking',
+      '/api/v1/profile'
+    ],
     cookieOptions: {
       httpOnly: false,
       sameSite: true,

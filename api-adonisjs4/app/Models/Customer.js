@@ -3,14 +3,16 @@
 const Model = use('Model')
 
 class Customer extends Model {
-  static get createdAtColumn() {
-    return null
+  static get createdAtColumn () {
+    return null;
   }
-  static get updatedAtColumn() {
-    return null
+
+  static get updatedAtColumn () {
+    return null;
   }
-  bookings() {
-    return hasMany('App/Models/Booking')
+
+  bookings () {
+    return this.hasMany('App/Models/Booking')
   }
 }
 

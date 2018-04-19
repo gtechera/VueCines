@@ -3,17 +3,21 @@
 const Model = use('Model')
 
 class Cinema extends Model {
-  static get createdAtColumn() {
-    return null
+
+  static get createdAtColumn () {
+    return null;
   }
-  static get updatedAtColumn() {
-    return null
+
+  static get updatedAtColumn () {
+    return null;
   }
-  movie_showings() {
-    return hasMany('App/Models/MovieShowing')
+
+  movie_showings () {
+    return this.hasMany('App/Models/MovieShowing');
   }
-  rooms() {
-    return hasMany('App/Models/Room')
+
+  rooms () {
+    return this.hasMany('App/Models/Room');
   }
 }
 

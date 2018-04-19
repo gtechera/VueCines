@@ -1,19 +1,21 @@
 'use strict'
 
-const Hash = use('Hash')
 const Model = use('Model')
 
 class User extends Model {
-  static boot() {
+  static boot () {
     super.boot()
 
     /**
      * A hook to hash the user password before saving
      * it to the database.
+     *
+     * Look at `app/Models/Hooks/User.js` file to
+     * check the hashPassword method
      */
-    this.addHook('beforeCreate', 'User.hashPassword')
+    this.addHook('beforeCreate', 'User.hashPassword');
 
-    this.addHook('afterCreate', 'User.setCustomer')
+    this.addHook('afterCreate', 'User.setCustomer');
   }
 
   /**
@@ -26,10 +28,11 @@ class User extends Model {
    *
    * @return {Object}
    */
-  tokens() {
+  tokens () {
     return this.hasMany('App/Models/Token')
   }
-  customer() {
+
+  customer () {
     return this.hasOne('App/Models/Customer')
   }
 }
