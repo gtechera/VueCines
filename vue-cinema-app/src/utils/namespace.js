@@ -1,18 +1,18 @@
-function mapValues(obj, f) {
-  const res = {}
+function mapValues (obj, f) {
+  const res = {};
   Object.keys(obj).forEach(key => {
     res[key] = f(obj[key], key)
-  })
-  return res
+  });
+  return res;
 }
 
 export default (module, types) => {
-  let newObj = {}
+  let newObj = {};
   mapValues(types, (names, type) => {
-    newObj[type] = {}
-    types[type].forEach(name => {
-      newObj[type][name] = module + ':' + name
-    })
-  })
-  return newObj
+    newObj[type] = {};
+    types[type].forEach(name=> {
+      newObj[type][name] = module + ':' + name;
+    });
+  });
+  return newObj;
 }
